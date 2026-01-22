@@ -13,8 +13,7 @@ This project is accompanied by a formal defensive publication establishing prior
 Defensive Disclosure:
 CARLOS – Defensive Technical Disclosure
 Published via Zenodo (CERN)
-DOI: [insert Zenodo DOI here once published]
-
+DOI: ](https://doi.org/10.5281/zenodo.18332326)
 The disclosure documents the system architecture, behavioral design philosophy, safety constraints, and obvious technical variations of the CARLOS companion robotics platform. It is intended to ensure that these foundational concepts remain part of the public commons and are not subject to future patent claims.
 
 This repository and all associated materials are released under the GNU Affero General Public License v3.0 (AGPL-3.0).
