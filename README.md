@@ -1,4 +1,4 @@
-# Project_CARLOS-
+# Project_CARLOS
 Project CARLOS is a human-scale companion robotics research platform focused on safe behavior design, failure containment, and reliable operation in close proximity to humans. The project explores a layered robotic control architecture emphasizing predictable state transitions, degraded-mode operation, and conservative autonomy boundaries rather than performance-driven optimization.
 
 The system is designed under a “when, not if” failure philosophy, assuming sensor uncertainty, communication loss, and human misuse as normal operating conditions. Core development focuses on behavior-level autonomy implemented through explicit state machines, supervised control layers, and safe default states that prioritize human safety and system stability over task completion.
