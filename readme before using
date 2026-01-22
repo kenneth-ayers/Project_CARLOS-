@@ -1,0 +1,7 @@
+# Project Carlos (CLI)
+
+A kid-like companion chatbot CLI with a self-trainable Naive Bayes intent classifier and optional local memory/logging.
+
+## Run
+```bash
+python carlos.py
