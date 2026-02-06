@@ -4,15 +4,15 @@ Project Overview
 
 Project CARLOS is a human-scale robotic research platform developed to investigate safe actuation, failure containment, and predictable behavior in robots operating in close physical proximity to humans.
 
-The project emphasizes conservative mechanical and control design over performance-driven optimization, with the goal of demonstrating how human-safe motion can be achieved through deliberate limitation of force, speed, and autonomy, rather than reliance on software intelligence alone.
+The project emphasizes conservative mechanical and control design over performance-driven optimization, achieving safety through deliberate, hardware-enforced limitation of force, speed, and stored energy, rather than reliance on software intelligence alone.
 
-CARLOS is not intended to demonstrate general artificial intelligence or high-performance manipulation. Instead, it serves as a systems engineering testbed for studying how robots can behave predictably, transparently, and safely when operating under uncertainty.
+CARLOS is not intended to demonstrate general artificial intelligence or high-performance manipulation. Instead, it serves as a systems engineering testbed for studying how robots can behave predictably, transparently, and safely when operating under uncertainty and partial failure.
 
 Engineering Focus and Primary Contribution
 
 The primary engineering contribution of this senior project is the design, implementation, and validation of a force-limited, compliant actuation subsystem suitable for human-proximate robotics.
 
-This includes:
+This contribution includes:
 
 mechanical design of compliant interaction zones
 
@@ -24,11 +24,11 @@ integration of mechanical compliance with control-level safety constraints
 
 validation of safe behavior under nominal and degraded operating conditions
 
-The CARLOS platform provides system-level context, while the actuation subsystem represents the core deliverable of the project.
+The CARLOS platform provides system-level context, while the actuation subsystem represents the core technical deliverable of the project.
 
 Design Philosophy
 
-The system is designed using a “when, not if” failure philosophy, assuming that sensor noise, communication loss, component degradation, and human misuse are normal operating conditions, not exceptional events.
+The system is designed using a “when, not if” failure philosophy, assuming that sensor noise, communication loss, component degradation, and human misuse are normal operating conditions rather than exceptional events.
 
 Accordingly, the design prioritizes:
 
@@ -40,7 +40,9 @@ safe default states
 
 graceful degradation over task completion
 
-Mechanical and control decisions are made to minimize stored energy and prevent hazardous motion even in the absence of correct software behavior.
+explicit minimization of stored mechanical and pneumatic energy
+
+Mechanical and control decisions are made to prevent hazardous motion even in the absence of correct software behavior, ensuring safety through physical design rather than procedural enforcement.
 
 Mechanical and Actuation Design
 
@@ -56,15 +58,15 @@ mechanical features that reduce injury risk during contact
 
 Actuator selection is justified through trade studies considering:
 
-force capability vs. human safety limits
+force capability versus human safety limits
 
-response time vs. stability
+response time versus stability
 
-efficiency vs. controllability
+efficiency versus controllability
 
-failure behavior (powered vs. unpowered states)
+failure behavior in powered and unpowered states
 
-The resulting design prioritizes physical safety guarantees over software-dependent enforcement.
+The resulting design prioritizes intrinsic physical safety guarantees over software-dependent enforcement.
 
 Control Architecture
 
@@ -76,7 +78,9 @@ supervisory safety logic
 
 behavior-level state machines
 
-Autonomy is deliberately constrained. All behaviors operate within explicitly defined safety envelopes, and loss of supervisory control results in controlled shutdown or mechanically safe states rather than continued operation.
+Autonomy is deliberately constrained. All behaviors operate within explicitly defined, mechanically enforced safety envelopes, and loss of supervisory control results in controlled shutdown or mechanically safe states rather than continued operation.
+
+No control layer is permitted to command motion outside these physical safety bounds.
 
 Safety Analysis and Validation
 
@@ -88,7 +92,7 @@ trace failure propagation paths
 
 guide mechanical and control-level mitigations
 
-Safety validation focuses on:
+Safety validation focuses on predictable containment rather than performance, including:
 
 behavior under sensor failure
 
@@ -98,7 +102,7 @@ response to unexpected human interaction
 
 shutdown and recovery behavior
 
-Testing prioritizes predictability and containment rather than performance metrics.
+Validation includes quantitative verification of fault response behavior, such as automatic depressurization within a bounded response time following pressure sensor dropout.
 
 Scope and Limitations
 
@@ -112,7 +116,7 @@ optimization for task efficiency
 
 emotionally expressive or social robotics goals
 
-The focus is on engineering correctness, safety, and reliability, not user experience or demonstration value.
+The focus is on engineering correctness, safety, and reliability, not user experience or demonstration value. Any apparent simplicity of behavior reflects deliberate conservative design tradeoffs rather than limited technical ambition.
 
 Outcome
 
